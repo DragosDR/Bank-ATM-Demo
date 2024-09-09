@@ -58,9 +58,11 @@ public void exchange$ToRON(double insertedDollars){
             String option = scanner.nextLine();
             if (option.equals(optionOne)){
                 System.out.println("You selected option 1 - Through Bank call - we will sortly get in touch. \n \tPlease provide your phone number. Thank you.");
+
                 storedPhoneNumber= scanner.nextLine();
-//                if (storedPhoneNumber.length() >0 && storedPhoneNumber.length() > 9 && storedPhoneNumber.length() <= 10) {
+
                 if (storedPhoneNumber.matches("^07[3-7][0-9]{7}$")){
+
                     System.out.println("Your phone number is : " + storedPhoneNumber);
                     loanThroughCall();
                     break;
@@ -71,6 +73,8 @@ public void exchange$ToRON(double insertedDollars){
                 System.out.println("You selected option 2 - Through text type - we will sortly get in touch through message.");
                 loanedThroughText();
                 break;
+            }else {
+                System.out.println("Invalid option");
             }
         }
     }
