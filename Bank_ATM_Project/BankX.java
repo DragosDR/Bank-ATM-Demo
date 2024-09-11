@@ -11,8 +11,7 @@ public abstract class BankX implements Bank{
     private final String currency= "RON";
 
     LocalDateTime ldt = LocalDateTime.now();
-    //    este immutable
-    DateTimeFormatter dateTimeFormatter= DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
+    DateTimeFormatter dateTimeFormatter= DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
 //constructor
     public BankX(String name,double balance){
@@ -134,7 +133,7 @@ public abstract class BankX implements Bank{
 
 
 
-    abstract  void exchange$ToRON(double insertedDollars);
+    public abstract  void exchange$ToRON(double insertedDollars);
     public abstract void exchangeEuroToRON(double insertedEuros);
 
 

@@ -87,6 +87,6 @@ public void exchange$ToRON(double insertedDollars){
         return "{ Name: " +getName()+
                 ", Balance= " + getBalance() +
                 " " +  getCurrency() + '\'' +
-                '}';
+                "}\n";
     }
 }
