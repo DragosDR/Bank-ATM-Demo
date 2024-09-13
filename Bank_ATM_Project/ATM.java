@@ -15,6 +15,11 @@ public abstract class ATM extends BankX {
 
 
 public void exchange$ToRON(double insertedDollars){
+        if (insertedDollars<10){
+            System.out.println("Unaccepted $ amount, please retry. \n" );
+            return;
+        }
+
     System.out.print("1$ Exchange rate : "  + DOLLAR_EXCHANGE_RATE + getCurrency()
             + "\n\tTotal exchanged: " + insertedDollars + " Dollar's at: " +  ldt.format(dateTimeFormatter));
 
@@ -31,6 +36,11 @@ public void exchange$ToRON(double insertedDollars){
 
 
     public void exchangeEuroToRON(double insertedEuros){
+        if (insertedEuros < 10){
+            System.out.println("Unaccepted € amount, please retry. \n" );
+            return;
+        }
+
         System.out.print("1€ Exchange rate : "  + EURO_EXCHANGE_RATE + getCurrency()
                 + "\n\tTotal exchanged: " + insertedEuros + " Euro at: " +  ldt.format(dateTimeFormatter));
 
@@ -40,7 +50,7 @@ public void exchange$ToRON(double insertedDollars){
 
     System.out.println( ", for: " +newBalanceAfterExchange + " " + getCurrency());
 
-     newBalanceAfterExchange= getBalance() + insertedEuros;
+     newBalanceAfterExchange = getBalance() + insertedEuros;
 
     setBalance(newBalanceAfterExchange);
 }

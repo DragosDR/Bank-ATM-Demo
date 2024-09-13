@@ -7,8 +7,7 @@ public interface Bank {
      double yearlyInterest();
 
      void loan();
-     void loanedThroughText();
-     void loanThroughCall();
+
 
 
 }

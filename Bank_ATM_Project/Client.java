@@ -28,11 +28,15 @@ public class Client extends ATM{
     public boolean equals(Object o) {
         if (this == o){
             return true;}
+
         if (!(o instanceof Client)){
             return false;}
 
         Client client = (Client) o;
-        return age == client.age;
+        if(client.age == this.age) {
+            return true;
+        }
+        return false ;
     }
 
     @Override
