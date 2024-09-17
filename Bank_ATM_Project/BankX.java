@@ -89,7 +89,7 @@ public abstract class BankX implements Bank{
 
             if (option > 100 && option < 10000) {
                 setBalance(getBalance() + option);
-                System.out.println(option+ " " + getCurrency() + " were added to your account. \nThank you for using this online service.");
+                System.out.println(option+ " " + getCurrency() + " were added to your account. \nThank you for using this ATM service.");
                 return;
             } else {
                 System.out.println("Amount unaccepted please re-insert amount or contact the bank for further support.");
@@ -116,7 +116,7 @@ public abstract class BankX implements Bank{
 
             if (option > 100 && option < 10000) {
                 setBalance(getBalance() + option);
-                System.out.println(option+ " " + getCurrency() + " were added to your account. \nThank you for using this online service.");
+                System.out.println(option+ " " + getCurrency() + " were added to your account. \nThank you for using this ATM service.");
                 return;
             } else {
                 System.out.println("Amount unaccepted.");

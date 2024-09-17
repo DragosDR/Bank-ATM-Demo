@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
 
         BankX client1 = new Client("Adriana", 0);
 
@@ -19,7 +18,7 @@ public class Main {
         client1.seeBalanceInRON();
 
 
-//        client1.loan();
+        client1.loan();
         client1.seeBalanceInRON();
 
         List<BankX> clientList= new ArrayList<>(Arrays.asList(
@@ -32,10 +31,12 @@ public class Main {
                 new Client("Irina",512,21),
                 new Client("Nicolae",4400,22),
                 new Client("Didi",3400,19),
+
                 new Client("Mimi",5000,40),
                 new Client("Mimi",5000,40),//duplicated data
                 new Client("Mimi",5000,40),//duplicated data
                 new Client("Mimi",5000,40),//duplicated data
+
                 new Client("Riri",5130,31),
                 new Client("Sam",4560,31),
                 new Client("Dan",9950,28)));
@@ -43,7 +44,7 @@ public class Main {
 
         Set<BankX> cSet = new HashSet<>();
         cSet.addAll(clientList);
-//        System.out.println(cSet);
+        System.out.println(cSet);
 
 
 
@@ -53,6 +54,7 @@ public class Main {
 /*
 Balance comparison between "people 'in DB'"
  */
+
 
         Collections.sort(clientList, new Comparator<BankX>() {
 
