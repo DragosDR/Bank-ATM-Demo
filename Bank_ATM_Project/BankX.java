@@ -46,12 +46,21 @@ public abstract class BankX implements Bank{
         System.out.println("Total balance is : " + getBalance() + " " +  getCurrency());
     }
 
+    /**
+     * A final method, meaning, that even if this abstract class will be inherited (extended), the logic applied will be found within this class.
+     * That aspect helps in detail hiding & data hiding, two fundamental OOP concepts.
+     * The use of  @param RON, helps the customer, adding money to its account (balance).
+     */
     public final Double addRON(double RON){
         this.balance += RON;
         System.out.println(RON + " " + getCurrency()+ " Added successfully to account at: " + ldt.format(dateTimeFormatter));
         return RON;
     }
-
+    /**
+     * A final method, meaning, that even if this abstract class will be inherited (extended), the logic applied will be found within this class.
+     * That aspect helps in detail hiding & data hiding, two fundamental OOP concepts.
+     * The use of  @param RON, helps the customer, withdrawing money from its account (balance).
+     */
     public final Double withdraw(double RON){
         if (RON < 10){
             System.out.println("Amount to be withdrawn too low please retry.");
@@ -66,7 +75,12 @@ public abstract class BankX implements Bank{
         return RON;
     }
 
-//From Interface!
+    /**
+     * This method is implemented form the Bank Interface.
+     * I used the JAVA keyword, final so the method cannot be overridden by subclasses.
+     * When a method is declared as the final method in the parent class, then any child class cannot override or modify the final method in java.
+     * @return
+     */
     public final double yearlyInterest(){
 
             double yearlyBalanceInterestApplied = getBalance()  +  getBalance() * 5 /100;
@@ -76,7 +90,11 @@ public abstract class BankX implements Bank{
     }
 
 
-
+    /**
+     * This method is called from ATM class and reflects the interaction between a client and a Bank AI Text-Robot.
+     * I used the JAVA keyword, final so the method cannot be overridden by subclasses.
+     *      * When a method is declared as the final method in the parent class, then any child class cannot override or modify the final method in java.
+     */
     public final void loanedThroughText(){
         Scanner scanner = new Scanner(System.in);
         int count =0;
@@ -103,6 +121,12 @@ public abstract class BankX implements Bank{
         }
 
     }
+
+    /**
+     *This method is called from ATM class and reflects the interaction between a client and a Bank AI Robot.
+     *I used the JAVA keyword, final so the method cannot be overridden by subclasses.
+     *      * When a method is declared as the final method in the parent class, then any child class cannot override or modify the final method in java.
+     */
 
     public final void loanThroughCall() {
         Scanner scanner = new Scanner(System.in);
@@ -132,8 +156,18 @@ public abstract class BankX implements Bank{
     }
 
 
-
+    /**
+     * exchange$ToRON method, will only be found within the ATM subclass.
+     * Find the logic of the method there.
+     * @param insertedDollars
+     */
     public abstract  void exchange$ToRON(double insertedDollars);
+
+    /**
+     * exchangeEuroToRON method, will only be found within the ATM subclass.
+     *      * Find the logic of the method there.
+     * @param insertedEuros
+     */
     public abstract void exchangeEuroToRON(double insertedEuros);
 
 
