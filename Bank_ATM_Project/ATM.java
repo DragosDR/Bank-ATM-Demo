@@ -14,14 +14,14 @@ public abstract class ATM extends BankX {
     //Methods
 
     /**
-     *This method handles the conversion of US dollars to Romanian leu (RON). I
-     * mount of dollars inserted is less than 10, the method prompts the user to retry with a higher amount and exits.
+     *This method handles the conversion of US dollars to Romanian leu (RON).
+     * If the amount of dollars inserted is less than 10, the method prompts the user to retry with a higher amount and exits.
      * Otherwise, the method prints the current exchange rate for 1 US dollar and calculates the total exchanged amount.
      * It then updates the user's balance by adding the exchanged amount of RON to their existing balance.
      *
      */
     public void exchange$ToRON(double insertedDollars){
-        if (insertedDollars<10){
+        if (insertedDollars < 10){
             System.out.println("Unaccepted $ amount, please retry. \n" );
             return;
         }
@@ -76,7 +76,7 @@ public abstract class ATM extends BankX {
      */
     public final void loan(){
         System.out.println("How would you like to get the loan: \n \t 1) Through bank call ? / \n\t 2) Through text type ?");
-        while(true) {
+
             Scanner scanner = new Scanner(System.in);
             System.out.print("Type option number: ");
             String optionOne = "1";
@@ -84,6 +84,7 @@ public abstract class ATM extends BankX {
             String storedPhoneNumber = "";
 
             String option = scanner.nextLine();
+        while(true) {
             if (option.equals(optionOne)){
                 System.out.println("You selected option 1 - Through Bank call - we will sortly get in touch. \n \tPlease provide your phone number. Thank you.");
 
@@ -91,12 +92,14 @@ public abstract class ATM extends BankX {
 
                 if (storedPhoneNumber.matches("^07[3-7][0-9]{7}$")){
 
-                    System.out.println("Your phone number is : " + storedPhoneNumber);
+                    System.out.println("Your phone number is : " + storedPhoneNumber + " we will get in touch to you soon.");
                     loanThroughCall();
                     break;
                 }else {
-                    System.out.println("Invalid number, retry.");
+                    System.out.println("Invalid number, retry.\n");
+
                 }
+
             } else if (option.equals(optionTwo)) {
                 System.out.println("You selected option 2 - Through text type - we will sortly get in touch through message.");
                 loanedThroughText();

@@ -7,7 +7,6 @@ public class Client extends ATM{
 
     public int age;
 
-
     public Client(String name, double balance) {
         super(name, balance);
     }

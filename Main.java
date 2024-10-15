@@ -9,9 +9,9 @@ public class Main {
 
         BankX client1 = new Client("Adriana", 0);
 
+        client1.seeBalanceInRON();
         client1.addRON(3500);
         client1.withdraw(500);
-        client1.seeBalanceInRON();
 
         client1.exchangeEuroToRON(5);
         client1.exchange$ToRON(10);
@@ -21,7 +21,7 @@ public class Main {
         client1.loan();
         client1.seeBalanceInRON();
 
-        List<BankX> clientList= new ArrayList<>(Arrays.asList(
+        List<BankX> clientList= new ArrayList<>(Arrays.asList( client1,
                 new Client("Ana",125,19),
                 new Client("Ion",310,42),
                 new Client("Randi",2000,22),
@@ -51,8 +51,9 @@ public class Main {
 
 
 
-/*
-Balance comparison between "people 'in DB'"
+/**
+ *
+Balance comparison between people 'in DB', using a Comparator.
  */
 
 
