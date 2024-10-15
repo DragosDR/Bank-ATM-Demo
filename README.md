@@ -1,8 +1,7 @@
-# Bank-ATM-Demo
-Bank-Client DEMO
+# Bank - OOP Project
 
 Overview
-The Bank-Client Project is a demonstration of object-oriented programming (OOP) principles in Java. 
+This Project is a demonstration of object-oriented programming (OOP) principles in Java. 
 
 It showcases the use of interfaces, abstract classes, and inheritance to model banking operations without relying on external frameworks like Spring or REST APIs. The project focuses on core OOP concepts and provides a modular structure for basic banking functionalities.
 
